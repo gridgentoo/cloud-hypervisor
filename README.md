@@ -1,3 +1,7 @@
+Дорожная карта проекта отслеживается через проект [GitHub
+project](https://github.com/orgs/cloud-hypervisor/projects/6).
+
+
 - [1. What is Cloud Hypervisor?](#1-what-is-cloud-hypervisor)
   - [Objectives](#objectives)
     - [High Level](#high-level)
