@@ -1,6 +1,25 @@
 Дорожная карта проекта отслеживается через проект [GitHub
 project](https://github.com/orgs/cloud-hypervisor/projects/6).
 
+Original repository.   
+https://github.com/cloud-hypervisor/cloud-hypervisor.    
+
+# 4. Связь с проектом Rust VMM
+
+Для достижения цели проектирования - создания высокопроизводительного гипервизора, ориентированного на безопасность, было принято решение использовать язык программирования [Rust](https://www.rust-lang.org/). Сильный акцент языка на память и потокобезопасность делает его идеальным кандидатом для реализации виртуальных машин.
+
+Вместо того, чтобы внедрять компоненты VMM с нуля, облачный гипервизор импортирует Rust VMM](https://github.com/rust-vmm) crates и совместно использует код и архитектуру с другими виртуальными машинами, такими как, например, [Firecracker](https://firecracker-microvm.github.io/) от Amazon и [crosvm](https://chromium.googlesource.com/chromiumos/platform/crosvm/) от Google.
+
+Облачный гипервизор охватывает цели проекта Rust VMM, которые заключаются в том, чтобы иметь возможность совместно использовать и повторно использовать как можно больше virtualization crates.
+
+## Различия с Firecracker и crosvm
+
+Большая часть кода облачного гипервизора основана на реализациях проекта Firecracker или crosvm. Оба они представляют собой виртуальные машины, написанные на Rust с акцентом на безопасность и защищенность, такие как облачный гипервизор.
+
+Цель проекта Cloud Hypervisor отличается от вышеупомянутых проектов тем, что он призван стать VMM общего назначения для облачных рабочих нагрузок и не ограничивается container/serverless или client workloads.
+
+Сообщество облачных гипервизоров благодарит сообщества проектов Firecracker и crosvm за отличную работу.
+
 
 - [1. What is Cloud Hypervisor?](#1-what-is-cloud-hypervisor)
   - [Objectives](#objectives)
